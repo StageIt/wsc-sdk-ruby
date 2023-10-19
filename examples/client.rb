@@ -20,8 +20,6 @@ logger.level = Logger::Severity::DEBUG # Enable logging output
 WscSdk.configure do |config|
   config.api_key      = ENV['WSC_API_KEY']
   config.access_key   = ENV['WSC_API_ACCESS_KEY']
-  #config.json_token   = ENV['WSC_JSON_TOKEN']
-  #config.authorization = Bearer ENV['WSC_JSON_TOKEN']
   config.logger       = logger
 
   # This value is set to Production, but you can change it to
