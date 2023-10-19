@@ -7,8 +7,8 @@
 # approach is recommended to add a layer of protection against exposing your
 # API keys.
 
-#raise "WSC_API_KEY environment variable is not set" unless ENV.has_key?('WSC_API_KEY')
-#raise "WSC_API_ACCESS_KEY environment variable is not set" unless ENV.has_key?('WSC_API_ACCESS_KEY')
+raise "WSC_API_KEY environment variable is not set" unless ENV.has_key?('WSC_API_KEY')
+raise "WSC_API_ACCESS_KEY environment variable is not set" unless ENV.has_key?('WSC_API_ACCESS_KEY')
 
 # Logging is disabled by default, but you can turn on it on by uncommenting the
 # logger.level line below.
@@ -18,10 +18,10 @@ logger = Logger.new(STDOUT)
 logger.level = Logger::Severity::DEBUG # Enable logging output
 
 WscSdk.configure do |config|
-  #config.api_key      = ENV['WSC_API_KEY']
-  #config.access_key   = ENV['WSC_API_ACCESS_KEY']
-  config.json_token   = ENV['WSC_JSON_TOKEN']
-  config.authorization = Bearer ENV['WSC_JSON_TOKEN']
+  config.api_key      = ENV['WSC_API_KEY']
+  config.access_key   = ENV['WSC_API_ACCESS_KEY']
+  #config.json_token   = ENV['WSC_JSON_TOKEN']
+  #config.authorization = Bearer ENV['WSC_JSON_TOKEN']
   config.logger       = logger
 
   # This value is set to Production, but you can change it to
